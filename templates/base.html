@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Vrijeme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+</head>
+
+<body>
+   <nav>
+    <div class="nav-wrapper blue">
+      <a href="#!" class="brand-logo center">Vrijeme</a>
+        <div class="container">
+             <p class="left" >Made by <strong>Darko Goluža</strong></p>
+        </div>
+    </div>
+  </nav>
+   <h2 class="center">Pretraži bilo koji grad u Bosni i Hercegovini</h2>
+
+    <div class="container">
+        <form action="{% url 'new_search' %}" method="post" >
+            {%csrf_token%}
+
+         <div class="row">
+            <div class="input-field col s12">
+             <input id="email" type="text" name="search" class="validate" >
+             <label for="email">Potraži</label>
+             </div>
+             <button class="btn waves-effect waves-light blue lighter-2" type="submit" name="action">Pronađi</button>
+         </div>
+
+        </form>
+
+        {% block content %}
+
+        {% endblock content %}
+
+    <div/>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+
+</html>
